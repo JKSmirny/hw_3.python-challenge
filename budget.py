@@ -4,7 +4,7 @@ import csv
 total_value = 0.00
 diff = 0.00
 average = 0.00
-csvpath = os.path.join('Resources.Bank','budget_data.csv')
+csvpath = os.path.join('Resources','budget_data.csv')
 with open(csvpath, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     print(csvreader)        
@@ -14,7 +14,18 @@ with open(csvpath, "r") as csvfile:
         column.append(float(line[1]))
     total_value = sum(column)
     print(total_value)
-    txtpath = os.path.join('analysis.Bank', 'total_value.txt')
+    
+    txtpath = os.path.join('analysis', 'changes.txt')
+    txtfile = open(txtpath, "w")
+    text1 = ["The changes in Profits/Losses: "]
+    text2 = str(column)
+    txtfile.writelines(text1)
+    txtfile.writelines(text2)
+    text2+=str(column)
+    txtfile.close()
+    print(column)
+
+    txtpath = os.path.join('analysis', 'total_value.txt')
     txtfile = open(txtpath, "w")
     text1 = ["The total net of Profits/Losses: "]
     text2 = str(total_value)
@@ -22,14 +33,13 @@ with open(csvpath, "r") as csvfile:
     txtfile.writelines(text2)
     text2+=str(total_value)
     txtfile.close()
-
-csvpath = os.path.join('Resources.Bank','budget_data.csv')
+csvpath = os.path.join('Resources','budget_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     print(csvreader)
     lines= len(list(csvreader)) - 1
     print(lines) 
-    txtpath = os.path.join('analysis.Bank', 'total_months.txt')
+    txtpath = os.path.join('analysis', 'total_months.txt')
     txtfile = open(txtpath, "w")
     text1 = ["The total amount of months: "]
     text2 = str(lines)
@@ -59,7 +69,7 @@ with open(csvpath, "r") as csvfile:
             average = total_value/lines
             print (average)
  
-    txtpath = os.path.join('analysis.Bank', 'Budget.average.txt')
+    txtpath = os.path.join('analysis', 'Budget.average.txt')
     txtfile = open(txtpath, "w")
     text1 = ["The average change in Profits/Losses: "]
     text2 = str(average)
