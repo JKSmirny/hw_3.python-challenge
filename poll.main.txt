@@ -4,3 +4,4 @@ Candidate Khan:  2218231
 Candidate Correy:  704200
 Candidate Li:  492940
 Candidate OTooley:  0
+Winner: Khan
