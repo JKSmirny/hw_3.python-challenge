@@ -35,7 +35,7 @@ with open(election_csv) as csvfile:
                         winner = "Khan"
                 print(winner)
 
-txtpath = os.path.join('pythonchallenge', 'winner.txt')
+txtpath = os.path.join('python-challenge', 'winner.txt')
 txtfile = open(txtpath, "w")
 text1 = ["The winner is: "]
 text2 = str(winner)
