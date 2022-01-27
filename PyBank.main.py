@@ -46,7 +46,7 @@ print("Maximal increase: {} (${})".format(months[max_increase_index], max_increa
 print("Maximal decrease: {} (${})".format(months[max_decrease_index], max_decrease))
 # now save it to file
 
-with open("analysis/results.txt", "w") as results:
+with open("analysis/PyBank.txt", "w") as results:
     results.write("Financial analysis\n")
     results.write("Total months: {}\n".format(number_months))
     results.write("Total: $ {}\n".format(total_amount))
