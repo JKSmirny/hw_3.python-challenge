@@ -1,2 +1,0 @@
-# pythonchallenge
-python homework
